@@ -1,0 +1,54 @@
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:padding="5dp"
+		android:background="#aaaaaa"
+		android:stretchColumns="1"
+		android:id="@+id/mainTable"
+       >
+<TableRow >
+      <Button
+          android:id="@+id/bindWeibo"
+          android:layout_width="150dp"
+          android:layout_height="fill_parent"
+          android:text="BindWeiBo" />
+
+      <Button
+          android:id="@+id/bindWeixin"
+          android:layout_width="150dp"
+          android:layout_height="fill_parent"
+          android:text="BindWeixin" >
+      </Button>
+</TableRow>
+
+<TableRow >
+      <EditText
+          android:id="@+id/uploadText"
+          android:layout_width="fill_parent"
+          android:layout_height="fill_parent"
+          android:layout_span="2"
+           />
+      </TableRow>     
+<TableRow >
+	<Button
+          android:id="@+id/publishWeibo"
+          android:layout_width="150dp"
+          android:layout_height="fill_parent"
+          android:text="Publish" />
+      <Button
+          android:id="@+id/select"
+          android:layout_width="150dp"
+          android:layout_height="fill_parent"
+          android:text="GetImage" />
+      </TableRow>
+      <TableRow >
+      <ImageView
+          android:id="@+id/image"
+          android:layout_width="100dp"
+          android:layout_height="100dp"
+          android:layout_span="2"
+          >
+      </ImageView>
+</TableRow>
+  </TableLayout>
+
