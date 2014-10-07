@@ -1,9 +1,6 @@
 package com.example.bothshare;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
 
-import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -11,17 +8,12 @@ import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
-import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup.LayoutParams;
-
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
-import android.widget.Toast;
 
 import com.example.listener.PublishClickListener;
 import com.example.listener.SelectedImageLongClickListener;
@@ -29,18 +21,15 @@ import com.example.listener.WeiboBindButtonListener;
 import com.example.listener.WeiboGetImageButtonListener;
 import com.example.persistent.AccessTokenKeeper;
 import com.example.persistent.Constant;
-import com.example.util.LocationManagerUtil;
+
 import com.sina.weibo.sdk.auth.Oauth2AccessToken;
 import com.sina.weibo.sdk.auth.WeiboAuth;
 import com.sina.weibo.sdk.auth.sso.SsoHandler;
-import com.sina.weibo.sdk.exception.WeiboException;
-import com.sina.weibo.sdk.net.RequestListener;
-import com.sina.weibo.sdk.openapi.legacy.StatusesAPI;
 
 
 public class MainActivity extends Activity {
 	
-	private Button bWeiboBindButton;
+	//private Button bWeiboBindButton;
 	private Button bWeiboPublishButton;
 	private Button bWeiboGetImage;
 	private EditText editText;
@@ -48,7 +37,7 @@ public class MainActivity extends Activity {
 	
 	private String ImagePath = "";
 	
-	private WeiboAuth mWeiboAuth;
+	//private WeiboAuth mWeiboAuth;
 	private Oauth2AccessToken accessWeibo;
 	
 	// Use Auth2 authentication now....
@@ -100,17 +89,9 @@ public class MainActivity extends Activity {
 	{
 		this.editText = (EditText) findViewById(R.id.uploadText);
 		
-		Init_bWeiboBindButton();
 		Init_bWeiboPublishButton();
 		Init_bWeiboGetImage();
 		//Init_selectedImage();
-		
-		if(accessWeibo != null && accessWeibo.isSessionValid())
-		{
-			bWeiboBindButton.setVisibility(View.INVISIBLE);
-		}
-		
-		
 	}
 
 	private void Init_selectedImage() {
@@ -150,13 +131,5 @@ public class MainActivity extends Activity {
 		bWeiboPublishButton = (Button) findViewById(R.id.publishWeibo);
 		
 		bWeiboPublishButton.setOnClickListener(new PublishClickListener(MainActivity.this, accessWeibo));
-	}
-
-	private void Init_bWeiboBindButton() {
-		bWeiboBindButton = (Button) findViewById(R.id.bindWeibo);
-			
-		mWeiboAuth = new WeiboAuth(this, Constant.AppKep, Constant.RedirectUri, Constant.Scope);
-		
-		bWeiboBindButton.setOnClickListener(new WeiboBindButtonListener(MainActivity.this, mWeiboAuth));
 	}
 }
