@@ -1,7 +1,7 @@
 BothShare
 =========
 
-Both share, a android application to share our fun(including text/picture/location coordinate to both Sina Weibo and Weixin 
+Both share, an android application to share our fun (including text/picture/location coordinate) to both Sina Weibo and Weixin 
 Friend circule.
 
-I use OAuth2 to authorize to the both sites 
+Use OAuth2 to authorize to the both sites, call the sina and tecent API to send the data 
